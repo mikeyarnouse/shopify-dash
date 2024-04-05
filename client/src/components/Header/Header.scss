@@ -1,32 +1,66 @@
+.header {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 2.25rem 8rem;
 
-.header{
+  a {
+    text-decoration: none;
+    color: #000;
+  }
 
-&__content{
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    &-logo {
+      width: 112px;
+      height: 35px;
+    }
+  }
+
+  &__orders,
+  &__returns {
+    height: 35px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__tail {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__button {
+    width: 119px;
+    height: 52px;
+    border: none;
+    border-radius: 4px;
+    background-color: #1773b0;
+    color: white;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 0.8;
+    }
+  }
+
+  &__content {
     width: 100%;
     display: flex;
     justify-content: space-between;
+  }
 
-}
-&__pages{
+  &__navlink {
+    text-decoration: none;
     display: flex;
     flex-direction: row;
-    text-decoration: none;
-    justify-content: space-around;
-    width: 50%;
-    
-}
-
-&__navlink{
-
-   text-decoration: none;
-   display: flex;
-   flex-direction: row;
-}
-
-&__button{
-    border-radius: 5px;
-    border: none;
-    background-color: #1773B0 ;
-    color: white;
-}
+  }
 }
