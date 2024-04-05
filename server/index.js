@@ -10,7 +10,7 @@ app.use(cors());
 
 const profileRoute = require("./routes/profile-route");
 const orderRoutes = require("./routes/orders-route");
-const paymentsRoutes = require("./routes/payments-route")
+const paymentsRoutes = require("./routes/payments-route");
 
 app.use("/api/profile", profileRoute);
 app.use("/api/orders", orderRoutes);
