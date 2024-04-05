@@ -18,6 +18,7 @@
         background-color: #FFF;
         border-radius: 14px;
         flex-grow: 1;
+        position: relative;
     }
 
     &__card-heading {
@@ -29,6 +30,10 @@
         justify-content: space-between;
         width: 100%;
         gap: 1.5rem;
+
+        &--payment-cards {
+            height: 15rem;
+        }
     }
 
     &__flex-items {
@@ -36,6 +41,16 @@
         display: flex;
         gap: 10rem;
         margin-top: 1.5rem;
+
+        &--address-cards {
+            justify-content: start;
+            gap: 1.75rem;
+        }
+
+        &--orders {
+            justify-content: space-between;
+            gap: 0;
+        }
     }
 
     &__item-heading {
@@ -58,9 +73,66 @@
         background-color: #EFF5FF;
         padding: 1rem;
         border-radius: 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
     }
 
     &__address-card-heading {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__address-heading {
         color: #707070;
+        font-size: 0.875rem;
+        font-weight: 400;
+    }
+    &__address-heading-icon {
+        font-size: 0.875rem;
+        font-weight: 400;
+    }
+
+    &__order-heading-wrapper {
+        display: flex;
+        gap: 5rem;
+    }
+
+    &__order-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1.25rem;
+        border-radius: 8px;
+        font-size: 0.875rem;
+
+        &--confirmed {
+            background-color: #EAFBEA;
+        }
+
+        &--pending {
+            background-color: #FFF5EB;
+        }
+
+        &--delivered {
+            background-color: #EFF5FF;
+        }
+    }
+
+    &__order-number {
+        font-size: 1.375rem;
+        font-weight: 500;
+    }
+
+
+    &__payment-methods-heading-wrapper {
+        display: flex;
+        gap: 5rem;
+    }
+
+    &__method-card {
+        position: absolute;
     }
 }

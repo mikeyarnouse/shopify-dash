@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios"
 import "./Profile.scss"
+import paymentCard from "../../assets/images/payment-card.png"
 
 const baseURL = "http://localhost:8080/api"
 
@@ -73,7 +74,17 @@ const Profile = () => {
               <h2 className="profile__card-heading" >Addresses</h2>
               <p className="profile__card-heading-text">Add</p>
             </div>
-            <div className="profile__flex-items">
+            <div className="profile__flex-items profile__flex-items--address-cards">
+              <div className="profile__address-card">
+                <div className="profile__address-card-heading">
+                  <h3 className="profile__address-heading">Primary Address: Home</h3>
+                  <p className="profile__address-heading-icon" >edit</p>
+                </div>
+                <div className="profile__address-card-body">
+                  <p className="profile__address-card-text" >{user.first_name} {user.last_name}</p>
+                  <p className="profile__address-card-text" >{user.shipping_address}</p>
+                </div>
+              </div>
               <div className="profile__address-card">
                 <div className="profile__address-card-heading">
                   <h3 className="profile__address-heading">Primary Address: Home</h3>
@@ -91,16 +102,16 @@ const Profile = () => {
               <h2 className="profile__card-heading">Orders</h2>
               <p className="profile__card-heading-text" >Manage</p>
             </div>
-            <div className="profile__flex-items">
-              <div className="profile__order-card">
+            <div className="profile__flex-items profile__flex-items--orders">
+              <div className="profile__order-card profile__order-card--confirmed">
                 <p className="profile__order-text" >Confirmed</p>
                 <p className="profile__order-number">3</p>
               </div>
-              <div className="profile__order-card">
+              <div className="profile__order-card profile__order-card--pending">
                 <p className="profile__order-text" >Pending</p>
                 <p className="profile__order-number">1</p>
               </div>
-              <div className="profile__order-card">
+              <div className="profile__order-card profile__order-card--delivered">
                 <p className="profile__order-text" >Delivered</p>
                 <p className="profile__order-number">4</p>
               </div>
@@ -108,7 +119,7 @@ const Profile = () => {
           </article>
         </div>
 
-        <div className="profile__row">
+        <div className="profile__row profile__row--payment-cards">
           <article className="profile__card">
             <div className="profile__payment-methods-heading-wrapper">
               <h2 className="profile__card-heading">Payment Methods</h2>
@@ -116,11 +127,12 @@ const Profile = () => {
             </div>
             <div className="profile__flex-items">
               {paymentMethods.map((method) => (
-                <div className="profile__method-card" key={method.payment_id}>
+                <>
+                  <img className="profile__method-card" key={method.payment_id} src={paymentCard} />
                   <p className="profile__method-type" >{method.payment_type}</p>
                   <p className="profile__method-num">{method.card_cvv}</p>
                   <p className="profile__method-name">{user.first_name} {user.last_name}</p>
-                </div>
+                </>
               ))}
             </div>
           </article>
