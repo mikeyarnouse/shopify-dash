@@ -4,6 +4,7 @@
 
 .profile {
   padding: 1rem;
+  padding-top: 2.5rem;
   margin: 0 7.5rem;
 
   &__content {
@@ -19,6 +20,11 @@
     border-radius: 14px;
     flex-grow: 1;
     position: relative;
+
+    &--bottom {
+      width: 70%;
+      height: 17.5rem;
+    }
   }
 
   &__card-heading {
@@ -42,6 +48,11 @@
     gap: 10rem;
     margin-top: 1.5rem;
 
+    &--start {
+      gap: 1rem;
+      align-items: center;
+    }
+
     &--address-cards {
       justify-content: start;
       gap: 1.75rem;
@@ -53,7 +64,7 @@
     }
 
     &--payment-cards {
-      gap: 0;
+      gap: 0.5rem;
     }
   }
 
@@ -88,6 +99,13 @@
 
   &__card-heading-text {
     color: #1773b0;
+
+    &--manage {
+      &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+      }
+    }
   }
 
   &__address-card {
@@ -131,6 +149,10 @@
 
     &--confirmed {
       background-color: #eafbea;
+      &:hover {
+        cursor: pointer;
+        background-color: #baffba;
+      }
     }
 
     &--pending {

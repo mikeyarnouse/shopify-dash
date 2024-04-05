@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Profile.scss";
 import paymentCard from "../../assets/images/payment-card.png";
@@ -9,18 +10,19 @@ import manage from "../../assets/images/manage.svg";
 const baseURL = "http://localhost:8080/api";
 
 const Profile = () => {
+  const navigate = useNavigate();
   const [user, setUser] = useState({});
   const [paymentMethods, setPaymentMethods] = useState([]);
   const [editNameModuleVisibility, setNameEditModuleVisibility] =
-    useState(true);
+    useState(false);
   const [editEmailModuleVisibility, setEmailEditModuleVisibility] =
-    useState(true);
+    useState(false);
   const [editPhoneModuleVisibility, setPhoneEditModuleVisibility] =
-    useState(true);
+    useState(false);
   const [editAddressOneModuleVisibility, setAddressOneEditModuleVisibility] =
-    useState(true);
+    useState(false);
   const [editAddressTwoModuleVisibility, setAddressTwoEditModuleVisibility] =
-    useState(true);
+    useState(false);
   const [updateFlag, setUpdateFlag] = useState(false);
 
   useEffect(() => {
@@ -149,11 +151,29 @@ const Profile = () => {
                   </form>
                 )}
               </h2>
-              <img className="profile__card-heading-icon" src={edit} alt="" />
+              <img
+                className="profile__card-heading-icon"
+                src={edit}
+                alt=""
+                onClick={() =>
+                  setNameEditModuleVisibility(!editNameModuleVisibility)
+                }
+              />
             </div>
             <div className="profile__flex-items">
               <div className="profile__item">
-                <h3 className="profile__item-heading">Email</h3>
+                <div className="profile__flex-items profile__flex-items--start">
+                  <h3 className="profile__item-heading">Email</h3>
+                  <img
+                    className="profile__card-heading-icon"
+                    src={edit}
+                    alt=""
+                    onClick={() =>
+                      setEmailEditModuleVisibility(!editEmailModuleVisibility)
+                    }
+                  />
+                </div>
+
                 <p className="profile__item-value">{user.email}</p>
                 {editEmailModuleVisibility && (
                   <form
@@ -170,8 +190,19 @@ const Profile = () => {
                   </form>
                 )}
               </div>
+
               <div className="profile__item">
-                <h3 className="profile__item-heading">Phone Number</h3>
+                <div className="profile__flex-items profile__flex-items--start">
+                  <h3 className="profile__item-heading">Phone Number</h3>
+                  <img
+                    className="profile__card-heading-icon"
+                    src={edit}
+                    alt=""
+                    onClick={() =>
+                      setPhoneEditModuleVisibility(!editPhoneModuleVisibility)
+                    }
+                  />
+                </div>
                 <p className="profile__item-value">{user.phone_number}</p>
                 {editPhoneModuleVisibility && (
                   <form
@@ -219,11 +250,16 @@ const Profile = () => {
             <div className="profile__flex-items profile__flex-items--address-cards">
               <div className="profile__address-card">
                 <div className="profile__address-card-heading">
-                  <h3 className="profile__address-heading">Shipping Address</h3>
+                  <h3 className="profile__address-heading">Billing Address</h3>
                   <img
                     className="profile__card-heading-icon"
                     src={edit}
                     alt=""
+                    onClick={() =>
+                      setAddressOneEditModuleVisibility(
+                        !editAddressOneModuleVisibility
+                      )
+                    }
                   />
                 </div>
                 <div className="profile__address-card-body">
@@ -251,11 +287,16 @@ const Profile = () => {
               </div>
               <div className="profile__address-card">
                 <div className="profile__address-card-heading">
-                  <h3 className="profile__address-heading">Billing Address</h3>
+                  <h3 className="profile__address-heading">Shipping Address</h3>
                   <img
                     className="profile__card-heading-icon"
                     src={edit}
                     alt=""
+                    onClick={() =>
+                      setAddressTwoEditModuleVisibility(
+                        !editAddressTwoModuleVisibility
+                      )
+                    }
                   />
                 </div>
                 <div className="profile__address-card-body">
@@ -291,12 +332,21 @@ const Profile = () => {
                   className="profile__card-heading-icon"
                   src={manage}
                   alt=""
+                  onClick={() => navigate("/orders")}
                 />
-                <p className="profile__card-heading-text">Manage</p>
+                <p
+                  className="profile__card-heading-text profile__card-heading-text--manage"
+                  onClick={() => navigate("/orders")}
+                >
+                  Manage
+                </p>
               </div>
             </div>
             <div className="profile__flex-items profile__flex-items--orders">
-              <div className="profile__order-card profile__order-card--confirmed">
+              <div
+                className="profile__order-card profile__order-card--confirmed"
+                onClick={() => navigate("/orders")}
+              >
                 <p className="profile__order-text">Confirmed</p>
                 <p className="profile__order-number">3</p>
               </div>
@@ -313,7 +363,7 @@ const Profile = () => {
         </div>
 
         <div className="profile__row profile__row--payment-cards">
-          <article className="profile__card">
+          <article className="profile__card profile__card--bottom">
             <div className="profile__payment-methods-heading-wrapper">
               <h2 className="profile__card-heading">Payment Methods</h2>
               <div className="profile__card-heading-icon-wrapper">
@@ -343,9 +393,9 @@ const Profile = () => {
               ))}
             </div>
           </article>
-          <article className="profile__card">
+          {/* <article className="profile__card">
             <h2 className="profile__card-heading">Refunds</h2>
-          </article>
+          </article> */}
         </div>
       </div>
     </main>
