@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import axios from "axios"
 import "./Profile.scss"
 import paymentCard from "../../assets/images/payment-card.png"
+import edit from "../../assets/images/pen.svg"
+import add from "../../assets/images/plus.svg"
+import manage from "../../assets/images/manage.svg"
 
 const baseURL = "http://localhost:8080/api"
 
@@ -41,7 +44,10 @@ const Profile = () => {
       <div className="profile__content">
         <div className="profile__row">
           <article className="profile__card">
-            <h2 className="profile__card-heading">{user.first_name} {user.last_name}</h2>
+            <div className="profile__card-heading-wrapper profile__card-heading-wrapper--icons">
+              <h2 className="profile__card-heading">{user.first_name} {user.last_name}</h2>
+              <img className="profile__card-heading-icon" src={edit} />
+            </div>
             <div className="profile__flex-items">
               <div className="profile__item">
                 <h3 className="profile__item-heading" >Email</h3>
@@ -54,7 +60,10 @@ const Profile = () => {
             </div>
           </article>
           <article className="profile__card">
-            <h2 className="profile__card-heading" >Privacy</h2>
+            <div className="profile__card-heading-wrapper profile__card-heading-wrapper--icons">
+              <h2 className="profile__card-heading">Privacy</h2>
+              <img className="profile__card-heading-icon" src={edit} />
+            </div>
             <div className="profile__flex-items">
               <div className="profile__item">
                 <h3 className="profile__item-heading" >User</h3>
@@ -72,12 +81,15 @@ const Profile = () => {
           <article className="profile__card">
             <div className="profile__card-heading-wrapper" >
               <h2 className="profile__card-heading" >Addresses</h2>
-              <p className="profile__card-heading-text">Add</p>
+              <div className="profile__card-heading-icon-wrapper" >
+                <img className="profile__card-heading-icon" src={add} />
+                <p className="profile__card-heading-text">Add</p>
+              </div>
             </div>
             <div className="profile__flex-items profile__flex-items--address-cards">
               <div className="profile__address-card">
                 <div className="profile__address-card-heading">
-                  <h3 className="profile__address-heading">Primary Address: Home</h3>
+                  <h3 className="profile__address-heading">Shipping Address</h3>
                   <p className="profile__address-heading-icon" >edit</p>
                 </div>
                 <div className="profile__address-card-body">
@@ -87,7 +99,7 @@ const Profile = () => {
               </div>
               <div className="profile__address-card">
                 <div className="profile__address-card-heading">
-                  <h3 className="profile__address-heading">Primary Address: Home</h3>
+                  <h3 className="profile__address-heading">Billing Address</h3>
                   <p className="profile__address-heading-icon" >edit</p>
                 </div>
                 <div className="profile__address-card-body">
@@ -100,7 +112,10 @@ const Profile = () => {
           <article className="profile__card">
             <div className="profile__order-heading-wrapper">
               <h2 className="profile__card-heading">Orders</h2>
-              <p className="profile__card-heading-text" >Manage</p>
+              <div className="profile__card-heading-icon-wrapper" >
+                <img className="profile__card-heading-icon" src={manage} />
+                <p className="profile__card-heading-text">Manage</p>
+              </div>
             </div>
             <div className="profile__flex-items profile__flex-items--orders">
               <div className="profile__order-card profile__order-card--confirmed">
@@ -123,7 +138,10 @@ const Profile = () => {
           <article className="profile__card">
             <div className="profile__payment-methods-heading-wrapper">
               <h2 className="profile__card-heading">Payment Methods</h2>
-              <p className="profile__card-heading-text">Add</p>
+              <div className="profile__card-heading-icon-wrapper" >
+                <img className="profile__card-heading-icon" src={add} />
+                <p className="profile__card-heading-text">Add</p>
+              </div>
             </div>
             <div className="profile__flex-items profile__flex-items--payment-cards">
               {paymentMethods.map((method) => (
