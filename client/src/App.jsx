@@ -8,12 +8,12 @@ import Orders from "./pages/Orders/Orders";
 function App() {
   return (
     <BrowserRouter>
-      <Header />
+      {/* <Header /> */}
       <Routes>
         <Route path="/profile" element={<Profile />} />
         <Route path="/orders" element={<Orders />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
     </BrowserRouter>
   );
 }
