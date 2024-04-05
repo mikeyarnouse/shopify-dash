@@ -1,5 +1,5 @@
 import "./Header.scss";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import brewLogo from "../../assets/icons/brewLogo.png";
 import bellIcon from "../../assets/icons/bell.png";
 import avatarIcon from "../../assets/icons/avatar.png";
