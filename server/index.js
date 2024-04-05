@@ -6,6 +6,13 @@ const orderRoutes = require('./routes/orders-route');
 const app = express();
 const port = process.env.PORT || 8080;
 
+app.use(express.json());
+app.use(cors());
+
+const profileRoute = require("./routes/profile-route");
+
+app.use("/api/profile", profileRoute);
+
 app.use(express.json())
 app.use(cors())
 
