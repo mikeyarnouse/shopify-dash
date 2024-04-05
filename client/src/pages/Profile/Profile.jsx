@@ -21,7 +21,6 @@ const Profile = () => {
     useState(true);
   const [editAddressTwoModuleVisibility, setAddressTwoEditModuleVisibility] =
     useState(true);
-  // const [editModuleVisibility, setEditModuleVisibility] = useState(true);
   const [updateFlag, setUpdateFlag] = useState(false);
 
   useEffect(() => {
@@ -150,7 +149,7 @@ const Profile = () => {
                   </form>
                 )}
               </h2>
-              <img className="profile__card-heading-icon" src={edit} />
+              <img className="profile__card-heading-icon" src={edit} alt="" />
             </div>
             <div className="profile__flex-items">
               <div className="profile__item">
@@ -194,7 +193,7 @@ const Profile = () => {
           <article className="profile__card">
             <div className="profile__card-heading-wrapper profile__card-heading-wrapper--icons">
               <h2 className="profile__card-heading">Privacy</h2>
-              <img className="profile__card-heading-icon" src={edit} />
+              <img className="profile__card-heading-icon" src={edit} alt="" />
             </div>
             <div className="profile__flex-items">
               <div className="profile__item">
@@ -213,7 +212,7 @@ const Profile = () => {
             <div className="profile__card-heading-wrapper">
               <h2 className="profile__card-heading">Addresses</h2>
               <div className="profile__card-heading-icon-wrapper">
-                <img className="profile__card-heading-icon" src={add} />
+                <img className="profile__card-heading-icon" src={add} alt="" />
                 <p className="profile__card-heading-text">Add</p>
               </div>
             </div>
@@ -221,7 +220,11 @@ const Profile = () => {
               <div className="profile__address-card">
                 <div className="profile__address-card-heading">
                   <h3 className="profile__address-heading">Shipping Address</h3>
-                  <img className="profile__card-heading-icon" src={edit} />
+                  <img
+                    className="profile__card-heading-icon"
+                    src={edit}
+                    alt=""
+                  />
                 </div>
                 <div className="profile__address-card-body">
                   <p className="profile__address-card-text">
@@ -249,7 +252,11 @@ const Profile = () => {
               <div className="profile__address-card">
                 <div className="profile__address-card-heading">
                   <h3 className="profile__address-heading">Billing Address</h3>
-                  <img className="profile__card-heading-icon" src={edit} />
+                  <img
+                    className="profile__card-heading-icon"
+                    src={edit}
+                    alt=""
+                  />
                 </div>
                 <div className="profile__address-card-body">
                   <p className="profile__address-card-text">
@@ -280,7 +287,11 @@ const Profile = () => {
             <div className="profile__order-heading-wrapper">
               <h2 className="profile__card-heading">Orders</h2>
               <div className="profile__card-heading-icon-wrapper">
-                <img className="profile__card-heading-icon" src={manage} />
+                <img
+                  className="profile__card-heading-icon"
+                  src={manage}
+                  alt=""
+                />
                 <p className="profile__card-heading-text">Manage</p>
               </div>
             </div>
@@ -306,7 +317,7 @@ const Profile = () => {
             <div className="profile__payment-methods-heading-wrapper">
               <h2 className="profile__card-heading">Payment Methods</h2>
               <div className="profile__card-heading-icon-wrapper">
-                <img className="profile__card-heading-icon" src={add} />
+                <img className="profile__card-heading-icon" src={add} alt="" />
                 <p className="profile__card-heading-text">Add</p>
               </div>
             </div>
@@ -317,6 +328,7 @@ const Profile = () => {
                     className="profile__method-card"
                     key={method.payment_id}
                     src={paymentCard}
+                    alt=""
                   />
                   <div className="profile__method-card-body">
                     <p className="profile__method-type">
