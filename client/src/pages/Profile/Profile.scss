@@ -1,0 +1,66 @@
+@use "../../styles/partials/typography" as *;
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables" as *;
+
+.profile {
+    padding: 1rem;
+    margin: 0 7.5rem;
+
+    &__content {
+        margin-top: 1.3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1.3rem;
+    }
+
+    &__card {
+        padding: 1.3rem;
+        background-color: #FFF;
+        border-radius: 14px;
+        flex-grow: 1;
+    }
+
+    &__card-heading {
+        font-size: 0.875rem;
+    }
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        gap: 1.5rem;
+    }
+
+    &__flex-items {
+        background-color: #FFF;
+        display: flex;
+        gap: 10rem;
+        margin-top: 1.5rem;
+    }
+
+    &__item-heading {
+        font-size: 0.875rem;
+        font-weight: 400;
+        color: #707070;
+        margin-bottom: 0.25rem;
+    }
+
+    &__card-heading-wrapper {
+        display: flex;
+        gap: 5rem;
+    }
+
+    &__card-heading-text {
+        color: #1773B0;
+    }
+
+    &__address-card {
+        background-color: #EFF5FF;
+        padding: 1rem;
+        border-radius: 14px;
+    }
+
+    &__address-card-heading {
+        color: #707070;
+    }
+}
