@@ -6,10 +6,13 @@ exports.up = function (knex) {
   return knex.schema.createTable("orders", (table) => {
     table.increments("order_id").primary();
     table.string("item_name").notNullable();
+    table.string("item_type").notNullable();
     table.string("item_quantity").notNullable();
+    table.string("item_price").notNullable();
     table.string("order_total").notNullable();
     table.string("shipping_address").notNullable();
     table.string("billing_address").notNullable();
+    table.string("delivery_date").notNullable();
     table
       .integer("profile_id")
       .unsigned()
