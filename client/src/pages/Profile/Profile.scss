@@ -51,6 +51,10 @@
             justify-content: space-between;
             gap: 0;
         }
+
+        &--payment-cards {
+            gap: 0;
+        }
     }
 
     &__item-heading {
@@ -134,5 +138,20 @@
 
     &__method-card {
         position: absolute;
+    }
+
+    &__method-card-body {
+        position: relative;
+        z-index: 2;
+        color: #FFF;
+        margin-top: 1rem;
+        margin-left: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__method-card-wrapper {
+        width: 17rem;
     }
 }

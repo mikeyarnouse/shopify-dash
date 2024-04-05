@@ -125,19 +125,21 @@ const Profile = () => {
               <h2 className="profile__card-heading">Payment Methods</h2>
               <p className="profile__card-heading-text">Add</p>
             </div>
-            <div className="profile__flex-items">
+            <div className="profile__flex-items profile__flex-items--payment-cards">
               {paymentMethods.map((method) => (
-                <>
+                <div className="profile__method-card-wrapper">
                   <img className="profile__method-card" key={method.payment_id} src={paymentCard} />
-                  <p className="profile__method-type" >{method.payment_type}</p>
-                  <p className="profile__method-num">{method.card_cvv}</p>
-                  <p className="profile__method-name">{user.first_name} {user.last_name}</p>
-                </>
+                  <div className="profile__method-card-body">
+                    <p className="profile__method-type" >{method.payment_type}</p>
+                    <p className="profile__method-num">{method.card_cvv}</p>
+                    <p className="profile__method-name">{user.first_name} {user.last_name}</p>
+                  </div>
+                </div>
               ))}
             </div>
           </article>
           <article className="profile__card">
-
+            <h2 className="profile__card-heading" >Refunds</h2>
           </article>
         </div>
       </div>
