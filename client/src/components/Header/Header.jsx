@@ -1,57 +1,48 @@
 import "./Header.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import brewLogo from "../../assets/icons/brewLogo.png";
+import bellIcon from "../../assets/icons/bell.png";
+import avatarIcon from "../../assets/icons/avatar.png";
 
 function Header() {
+  const navigate = useNavigate();
   return (
     <>
       <section className="header">
-        <div className="header__content">
-          <div className="header__pages">
-                <Link path='/'>
-                <img src='' alt=''>
-                </img>
-                </Link>
-                
-                <Link path='../../pages/Orders/Orders.jsx' className="header__navlink">
-                    <p className="header__orders"> Orders </p>
-                </Link>
+        <div className="header__links">
+          <img
+            src={brewLogo}
+            alt=""
+            className="header__links-logo"
+            onClick={() => navigate("/")}
+          />
 
-                <Link className="header__navlink">
-                  <p className="header__returns"> Returns </p>
-                </Link>
-                
-            
-          </div>
+          <p className="header__orders" onClick={() => navigate("/orders")}>
+            Orders
+          </p>
 
-            <div> 
-                <div className="header__icons"> 
-                <Link path=''> 
-                <img src='' alt='' className="header__bell--icon">
-
-                </img>
-                <img src='' alt='' className="header__avatar--icon">
-
-                </img>
-                
-                </Link>
-                </div>
-                <div className="header__buttonsect"> 
-                    <Link> 
-                    <button className="header__button"> 
-                       <p className="header__gostore"> Go to store </p> 
-                    </button>
-                    </Link>
-                </div>
-
-
-            </div>
+          <p className="header__returns" onClick={() => navigate("/returns")}>
+            Returns
+          </p>
         </div>
 
-
-
-
+        <div className="header__tail">
+          <div className="header__icons">
+            <img src={bellIcon} alt="" className="header__bell--icon"></img>
+            <img
+              src={avatarIcon}
+              alt=""
+              className="header__avatar--icon"
+              onClick={() => navigate("/profile")}
+            ></img>
+          </div>
+          <div className="header__buttons">
+            <button className="header__button">
+              <p className="header__gostore"> Go to store </p>
+            </button>
+          </div>
+        </div>
       </section>
-      <h1> Header RIGHT HERE </h1>
     </>
   );
 }

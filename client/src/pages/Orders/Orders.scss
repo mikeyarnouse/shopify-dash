@@ -1,12 +1,12 @@
 .orders {
   display: flex;
   flex-direction: column;
-  padding: 1.25rem 2.5rem;
+  padding: 2.5rem 8rem;
   background-color: #f5f5f5;
 
   &-head {
     display: flex;
-    justify-content: center;
+    justify-content: start;
   }
 
   &__title {
@@ -16,10 +16,10 @@
 
   &-content {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     // margin: auto;
     gap: 1.5rem;
-    margin-top: 2.5rem;
+    margin-top: 1.5rem;
     width: 100%;
   }
 }
