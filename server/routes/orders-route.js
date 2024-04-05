@@ -3,7 +3,11 @@ const knex = require("knex")(require("../knexfile"));
 
 router.get("/", async (req, res) => {
   try {
-    const data = await knex("orders");
+    const data = await knex("orders").join(
+      "profile",
+      "profile.profile_id",
+      "orders.profile_id"
+    );
     res.status(200).json(data);
   } catch (error) {
     console.error(error);
