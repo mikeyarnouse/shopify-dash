@@ -90,7 +90,7 @@ const Profile = () => {
               <div className="profile__address-card">
                 <div className="profile__address-card-heading">
                   <h3 className="profile__address-heading">Shipping Address</h3>
-                  <p className="profile__address-heading-icon" >edit</p>
+                  <img className="profile__card-heading-icon" src={edit} />
                 </div>
                 <div className="profile__address-card-body">
                   <p className="profile__address-card-text" >{user.first_name} {user.last_name}</p>
@@ -100,7 +100,7 @@ const Profile = () => {
               <div className="profile__address-card">
                 <div className="profile__address-card-heading">
                   <h3 className="profile__address-heading">Billing Address</h3>
-                  <p className="profile__address-heading-icon" >edit</p>
+                  <img className="profile__card-heading-icon" src={edit} />
                 </div>
                 <div className="profile__address-card-body">
                   <p className="profile__address-card-text" >{user.first_name} {user.last_name}</p>
