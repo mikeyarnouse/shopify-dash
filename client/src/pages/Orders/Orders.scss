@@ -1,16 +1,25 @@
 .orders {
   display: flex;
   flex-direction: column;
-  padding: 1.25rem 1.5rem;
+  padding: 1.25rem 2.5rem;
   background-color: #f5f5f5;
+
+  &-head {
+    display: flex;
+    justify-content: center;
+  }
 
   &__title {
     font-size: 1.75rem;
+    // margin-left: 2.75rem;
   }
 
   &-content {
     display: flex;
     justify-content: center;
+    // margin: auto;
     gap: 1.5rem;
+    margin-top: 2.5rem;
+    width: 100%;
   }
 }

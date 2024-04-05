@@ -38,23 +38,91 @@
 
   &-card {
     // padding: 1rem;
+    &__info {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      &-profile {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      &-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      &-btn {
+        width: 8.9375rem;
+        height: 2.6875rem;
+        background-color: #fff;
+        color: #197cbd;
+        font-weight: 600;
+        font-size: 0.75rem;
+        border-radius: 4px;
+
+        &--buy {
+          border: 1px solid black;
+        }
+        &--manage {
+          border: 1px solid #dedede;
+        }
+      }
+    }
+
+    &__quantity {
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    &__order-number {
+      font-size: 0.875rem;
+      color: #707070;
+    }
+
+    &__profile-name,
+    &__profile-address {
+      font-size: 0.875rem;
+    }
+
+    &__total {
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+
+    &__img {
+      border-radius: 12px;
+    }
+  }
+
+  &-card__image-block-1 {
+    display: flex;
+    gap: 0.5rem;
   }
 
   &-card__image-block-2 {
     display: flex;
+    gap: 0.5rem;
 
     &__wrapper {
       display: flex;
       flex-direction: column;
+      justify-content: space-between;
     }
   }
   &-card__image-block-3 {
     display: flex;
+    gap: 0.5rem;
 
     &__wrapper,
     &__wrapper-2 {
       display: flex;
       flex-direction: column;
+      gap: 0.5rem;
     }
   }
 }

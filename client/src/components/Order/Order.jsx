@@ -94,12 +94,16 @@ const Order = ({ order }) => {
             <p className="order-card__profile-name">{`${order.first_name} ${order.last_name}`}</p>
             <p className="order-card__profile-address">{`${order.shipping_address}`}</p>
           </div>
-          <div className="order-card__info-price">
-            <p className="order-card__price">{`${order.order_total}`}</p>
+          <div className="order-card__info-total">
+            <p className="order-card__total">{`${order.order_total}`}</p>
           </div>
           <div className="order-card__info-buttons">
-            <button className="order-card__info-btn">Buy Again</button>
-            <button className="order-card__info-btn">Manage</button>
+            <button className="order-card__info-btn order-card__info-btn--buy">
+              Buy Again
+            </button>
+            <button className="order-card__info-btn order-card__info-btn--manage">
+              Manage
+            </button>
           </div>
         </div>
       </div>
