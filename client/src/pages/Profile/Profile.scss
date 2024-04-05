@@ -67,6 +67,23 @@
     &__card-heading-wrapper {
         display: flex;
         gap: 5rem;
+
+        &--icons {
+            gap: 1rem;
+        }
+    }
+
+    &__card-heading-icon {
+        cursor: pointer;
+    }
+
+    &__card-heading-icon-wrapper {
+        display: flex;
+        gap: 1rem;
+    }
+
+    &__card-heading-text {
+        cursor: pointer;
     }
 
     &__card-heading-text {
