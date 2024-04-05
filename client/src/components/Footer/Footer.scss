@@ -1,0 +1,25 @@
+
+
+
+.footer{
+
+    &__section{
+        display: flex;
+    flex-direction: row;
+
+    }
+
+    display: flex;
+    flex-direction: row;
+&__div{
+    display: flex;
+    flex-direction: row;
+}
+
+&__navlink{
+    padding-left: 20px;
+    color: #1879B9;
+    text-decoration: none;
+}
+
+}

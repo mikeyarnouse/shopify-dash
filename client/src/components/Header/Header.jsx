@@ -51,7 +51,6 @@ function Header() {
 
 
       </section>
-      <h1> Header RIGHT HERE </h1>
     </>
   );
 }
