@@ -89,7 +89,7 @@ const Profile = () => {
             <div className="profile__flex-items profile__flex-items--address-cards">
               <div className="profile__address-card">
                 <div className="profile__address-card-heading">
-                  <h3 className="profile__address-heading">Primary Address: Home</h3>
+                  <h3 className="profile__address-heading">Shipping Address</h3>
                   <p className="profile__address-heading-icon" >edit</p>
                 </div>
                 <div className="profile__address-card-body">
@@ -99,7 +99,7 @@ const Profile = () => {
               </div>
               <div className="profile__address-card">
                 <div className="profile__address-card-heading">
-                  <h3 className="profile__address-heading">Primary Address: Home</h3>
+                  <h3 className="profile__address-heading">Billing Address</h3>
                   <p className="profile__address-heading-icon" >edit</p>
                 </div>
                 <div className="profile__address-card-body">
