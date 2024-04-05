@@ -1,0 +1,32 @@
+
+.header{
+
+&__content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+}
+&__pages{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    justify-content: space-around;
+    width: 50%;
+    
+}
+
+&__navlink{
+
+   text-decoration: none;
+   display: flex;
+   flex-direction: row;
+}
+
+&__button{
+    border-radius: 5px;
+    border: none;
+    background-color: #1773B0 ;
+    color: white;
+}
+}
