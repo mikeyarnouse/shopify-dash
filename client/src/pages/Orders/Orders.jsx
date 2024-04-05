@@ -23,7 +23,9 @@ const Orders = () => {
 
   return (
     <main className="orders">
-      <h1 className="orders__title">Orders</h1>
+      <div className="orders-head">
+        <h1 className="orders__title">Orders</h1>
+      </div>
       <div className="orders-content">
         {orders?.map((o) => {
           return <Order key={o.order_id} order={o} />;
